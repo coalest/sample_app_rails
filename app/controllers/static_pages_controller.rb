@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @base_title = "Ruby on Rails Tutorial"
   end
 
   def help
