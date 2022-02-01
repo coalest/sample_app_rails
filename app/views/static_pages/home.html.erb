@@ -1,4 +1,12 @@
-<h1>Sample App</h1>
-<p>
- Get help on the Ruby on Rails tutorial at the rails Tutorial Help page. To get help on this sample app, see the Ruby on Rails tutorial book.
-</p>
+<div class="center jumbotron">
+  <h1>Welcome to the Sample App</h1>
+
+  <h2>
+    This it the homepage for my Sample App.
+  </h2>
+
+  <%= link_to "Sign up now!", '#', class:"btn bt-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.svg", alt:"Rails logo", width: "200"),
+                      "https://rubyonrails.org/" %>
