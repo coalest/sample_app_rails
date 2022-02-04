@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    if logged_in?
+      @user = current_user
+    else
+      redirect_to login_path
+      flash[:danger] = "Log in to see that page"
+    end
   end
 
   def new
@@ -11,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to the Sample App"
+      log_in @user
       redirect_to user_url(@user)
     else
       render 'new'
